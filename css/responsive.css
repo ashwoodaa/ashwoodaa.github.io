@@ -1,0 +1,88 @@
+@media screen and (min-width: 480px) {
+
+    /******************************************************
+    TWO COLUMN LAYOUT I don't know why we are capatalizing
+    everything. I don't like it. So, this stops here.
+    *******************************************************/
+  #primary {
+    width: 50%;
+    float: left;
+  }
+
+  #secondary {
+    width: 40%;
+    float: right;
+  } /* We didn't set this to 50% because it is the secondary and do want it to take up as much space.*/
+
+
+  /****************************************************************************************
+  We want three elements side by side when the screen gets large enough to support that.
+  This is the math for figuring it out.
+  3 * 5 = 15% for our margins- here we have 3 columns times (2.5+2.5 which is 5) the 2.5 is the margin on the sides.   So we are up to 15% of space needed for our margins. Everything else is space that needs/can be taken up by
+  the images.
+  100% - 15% = 85%- So, 100% of the space minus the margins which is 15%. gives us 85% of usable space.
+  85% / 3 = 28.333333333333-85% divided by 3 columns that need the space. RESIST the URGE(ent need) to round off to a near percent. what matters in this ship is accuracy. and I run and tight ship.
+   *********************************************************************************************/
+
+
+   /******************************************************
+    Page: Portfolio see that? no caps. still readable.
+    *******************************************************/
+
+  #gallery li {
+    width: 28.3333%; /*Four decimal places of accuracy seems to just about right. little red riding hood style.*/
+  }
+
+  #gallery li:nth-child(4n) {
+    clear: left; /*the clear command does not allow floating elements to the specification that you set. like right, left, both, none, initial, and inherit.*/
+  } /*THIS IS SAYING: I would like this styling to be applied to any fourth element inside of our gallery list items.  We are doing this so it continues the nice set of 3 columns we have going on.*/
+
+   /******************************************************
+    Page: About
+    *******************************************************/
+
+  .profile-photo {
+    float: left;
+    margin: 0 5% 80px 0;
+  }
+
+
+} /*This only applies if the screen size is larger than 480 px. So larger than your average smartphone*/
+
+@media screen and (min-width: 660px) {
+
+  /******************************************************
+    Page: Header
+    *******************************************************/
+
+  nav {
+    background: none;
+    float: right;
+    font-size: 1.125em;
+    margin-right: 5%;
+    text-align: right;
+    width: 45%
+  }
+
+  #logo {
+    float: left;
+    margin-left: 5%;
+    text-align: left;
+    width: 45%;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+ h2 {
+    font-size: 0.825em;
+    margin-bottom: 20px;
+  }
+
+  header {
+    border-bottom: 5px solid #599a68;
+    margin-bottom: 60px;
+  }
+
+} /*This comes into effect once the screen hits 660 px. So tablets and desktops*/
